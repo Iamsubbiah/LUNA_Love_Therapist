@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luna - Your 3D Love Therapist</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <meta name="theme-color" content="#0c0c16">
+</head>
+<body class="dark-theme">
+    <!-- 3D Scene Container -->
+    <div id="scene-container"></div>
+    
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+    
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-spinner"></div>
+        <h2>Luna</h2>
+        <p>Your Love Therapist</p>
+    </div>
+    
+    <!-- Main Container -->
+    <div class="container-fluid main-wrapper">
+        <div class="row vh-100">
+            <div class="col-12 d-flex flex-column justify-content-center align-items-center">
+                
+                <!-- Header with controls -->
+                <header class="glass-header">
+                    <div class="brand">
+                        <div class="logo-pulse"></div>
+                        <h1>Luna</h1>
+                    </div>
+                    
+                    <div class="controls">
+                        <button id="toggle-auto-mic" class="control-btn" title="Toggle auto-mic mode" data-tilt>
+                            <i class="fas fa-microphone-alt"></i>
+                        </button>
+                        <button id="toggle-voice-output" class="control-btn" title="Toggle voice output" data-tilt>
+                            <i class="fas fa-volume-up"></i>
+                        </button>
+                        <button id="toggle-mode" class="control-btn" title="Toggle theme" data-tilt>
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </div>
+                </header>
+                
+                <!-- Main Chat Interface -->
+                <div class="chat-interface glass-morphism" data-tilt data-tilt-max="5" data-tilt-glare data-tilt-max-glare="0.2">
+                    <div class="chat-container" id="chat-container">
+                        <!-- Messages will be dynamically added here -->
+                    </div>
+                    
+                    <div class="input-container">
+                        <div class="input-wrapper glass-input" data-tilt data-tilt-max="10">
+                            <input type="text" id="user-input" placeholder="Ask Luna about relationships..." autocomplete="off">
+                            <button id="record-btn" class="input-btn" data-tilt>
+                                <i class="fas fa-microphone"></i>
+                            </button>
+                            <button id="send-btn" class="input-btn" data-tilt>
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Animated Decorative Elements -->
+                <div class="decorative-element floating-1"></div>
+                <div class="decorative-element floating-2"></div>
+                <div class="decorative-element floating-3"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Floating Hearts Animation -->
+    <div class="hearts-container">
+        <div class="heart heart-1"></div>
+        <div class="heart heart-2"></div>
+        <div class="heart heart-3"></div>
+        <div class="heart heart-4"></div>
+        <div class="heart heart-5"></div>
+    </div>
+    
+    <!-- Notifications -->
+    <div id="notification-container"></div>
+    
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r132/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.0/dist/vanilla-tilt.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="{{ url_for('static', filename='js/particles-config.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/cursor-glow.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/three-scene.js') }}" type="module"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html> 
